@@ -1,5 +1,5 @@
 <div class="container">
-  <h2>Add Evidence</h2>
+  <h2>Add Achievement</h2>
 
   <%= form_for(@evidence) do |e| %>
   <div class="form-group row">
@@ -30,7 +30,7 @@
     </div>
   </div>
 
-  <%= e.submit(class: "btn btn-primary") %>
+  <%= e.submit("Submit", class: "btn btn-primary") %>
   <%= link_to "Cancel", evidences_path %>
   <% end %>
 

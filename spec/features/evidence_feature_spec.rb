@@ -3,22 +3,22 @@ require "rails_helper"
 describe "Handling evidence" do
   it "should display evidence upon login" do
     visit '/evidences'
-    expect(page).to have_content "No evidence yet."
+    expect(page).to have_content "No achievements yet."
   end
 end
 
 describe "creating evidence" do
   it "should allow the user to add evidence" do
     visit "/evidences"
-    expect(page).to have_content "No evidence yet."
-    expect(page).to have_link "Add evidence"
-    click_link("Add evidence")
-    expect(page).to have_content "Evidence"
+    expect(page).to have_content "No achievements yet."
+    expect(page).to have_link "Add achievement"
+    click_link("Add achievement")
+    expect(page).to have_content "Achievement"
     fill_in "Headline", with: "Attended career fair"
     fill_in "Description", with: "Attended UCL career fair to represent HSBC IT. Spoke with a load of grads."
     fill_in "Category", with: "Sponsorship, Role Model"
     fill_in "Date achieved", with: "2017-01-21"
-    click_button "Create Evidence"
+    click_button "Submit"
     expect(page).to have_content "Attended career fair"
     expect(page).to have_content "Sponsorship, Role Model"
     expect(page).to have_content "Attended UCL care..."
@@ -27,8 +27,8 @@ end
 
 describe "viewing evidence" do
   it "should allow the user to view evidence" do
-    create_evidence
-    expect(page).not_to have_content "No evidence yet."
+    create_achievement
+    expect(page).not_to have_content "No achievements yet."
     click_link "Attended career fair"
     expect(page).to have_content "Attended career fair"
     expect(page).to have_content "Attended UCL career fair to represent HSBC IT. Spoke with a load of grads."
@@ -37,12 +37,12 @@ describe "viewing evidence" do
   end
 end
 
-def create_evidence
+def create_achievement
   visit "/evidences"
-  click_link("Add evidence")
+  click_link("Add achievement")
   fill_in "Headline", with: "Attended career fair"
   fill_in "Description", with: "Attended UCL career fair to represent HSBC IT. Spoke with a load of grads."
   fill_in "Category", with: "Sponsorship, Role Model"
   fill_in "Date achieved", with: "2017-01-21"
-  click_button "Create Evidence"
+  click_button "Submit"
 end
