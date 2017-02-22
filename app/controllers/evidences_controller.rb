@@ -17,6 +17,10 @@ class EvidencesController < ApplicationController
     end
   end
 
+  def show
+    @evidence = Evidence.find(params[:id])
+  end
+
   private
 
   def evidence_params
