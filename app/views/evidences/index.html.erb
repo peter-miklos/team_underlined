@@ -1,6 +1,4 @@
 <div class="container">
-  <h2>Evidence</h2>
-
   <% if @evidences.any? %>
     <% @evidences.each_with_index do |evidence, index| %>
     <div class="panel panel-info">
@@ -9,11 +7,13 @@
       </div>
       <div class="panel-body" id="evidence_content_<%=index%>">
         <p>Category: <%= evidence.category %></p>
-        Description: <%= truncate(evidence.description, length: 20)%>
       </div>
     </div>
     <% end %>
   <% else %>
     No evidence yet.
   <% end %>
+
+  <!-- <a href="/evidences/new">Add evidence</a> -->
+
 </div>
