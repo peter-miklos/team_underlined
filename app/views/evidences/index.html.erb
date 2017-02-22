@@ -11,6 +11,8 @@
       <div class="panel-body" id="evidence_content_<%=index%>">
         <p>Category: <%= evidence.category %></p>
         Description: <%= truncate(evidence.description, length: 20)%>
+        <br>
+        <b><%= link_to "Endorse", new_endorsement_path %></b>
       </div>
     </div>
     <% end %>
