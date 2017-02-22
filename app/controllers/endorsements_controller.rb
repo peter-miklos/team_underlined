@@ -2,7 +2,11 @@ class EndorsementsController < ApplicationController
 
   def index
     @endorsements = Endorsement.all
-    p @endorsements
+  end
+
+  def show
+    @endorsement = Endorsement.find(params[:id])
+
   end
 
   def new
@@ -11,7 +15,6 @@ class EndorsementsController < ApplicationController
 
   def create
     @endorsement = Endorsement.create(endorsement_params)
-    p @endorsement
     if @endorsement.save
       redirect_to endorsements_path
     else

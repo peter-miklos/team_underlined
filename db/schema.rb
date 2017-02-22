@@ -15,13 +15,13 @@ ActiveRecord::Schema.define(version: 20170222135009) do
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
 
-
   create_table "endorsements", force: :cascade do |t|
     t.string "headline"
     t.string "name"
     t.string "description"
     t.string "category"
     t.date   "date_achieved"
+  end
 
   create_table "evidences", force: :cascade do |t|
     t.string   "headline"
@@ -30,7 +30,6 @@ ActiveRecord::Schema.define(version: 20170222135009) do
     t.string   "category"
     t.datetime "created_at",    null: false
     t.datetime "updated_at",    null: false
-
   end
 
 end
