@@ -8,6 +8,11 @@
       <div class="panel-heading" id="endorsement_header_<%=index%>">
         <b><%= link_to "#{endorsement.headline}", endorsement_path(endorsement) %></b>
       </div>
+      <div class="panel-body" id="endorsement_content_<%=index%>">
+        <p>Category: <%= endorsement.category %></p>
+        Description: <%= truncate(endorsement.description, length: 20)%>
+        <b><%= link_to "Submit", new_endorsement_path %></b>
+      </div>
     </div>
   <% end %>
   <% else %>

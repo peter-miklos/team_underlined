@@ -1,4 +1,5 @@
 <div class="container">
+  <h2>Add Endorsement</h2>
   <%= form_for @endorsement do |e| %>
 
   <div class="form-group row">
@@ -36,7 +37,7 @@
     </div>
   </div>
 
-  <%= e.submit("Create endorsement", class: "btn btn-primary") %>
+  <%= e.submit("Submit", class: "btn btn-primary") %>
   <%= link_to "Cancel", endorsements_path %>
   <% end %>
 </div>

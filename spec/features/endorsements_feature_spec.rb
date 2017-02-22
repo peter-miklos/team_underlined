@@ -1,10 +1,19 @@
 require 'rails_helper'
+require 'web_helpers'
 
 feature 'endorsements' do
   context 'when you have no endorsements' do
     scenario 'viewing endorsement' do
       visit '/endorsements'
       expect(page).to have_content('You do not have any endorsements yet')
+    end
+  end
+
+  context "creating endorsement" do
+    it "should allow the user to create an endorsement on an achievement" do
+      create_endorsement
+      expect(page).to have_content "Great contribution to the project"
+      expect(page).to have_content "Really enjoyed wo..."
     end
   end
 
