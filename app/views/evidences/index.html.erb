@@ -1,0 +1,19 @@
+<div class="container">
+  <h2>Evidence</h2>
+
+  <% if @evidences.any? %>
+    <% @evidences.each_with_index do |evidence, index| %>
+    <div class="panel panel-info">
+      <div class="panel-heading" id="evidence_header_<%=index%>">
+        <b><%= link_to "#{evidence.headline}", evidence_path(evidence)%></b>
+      </div>
+      <div class="panel-body" id="evidence_content_<%=index%>">
+        <p>Category: <%= evidence.category %></p>
+        Description: <%= truncate(evidence.description, length: 20)%>
+      </div>
+    </div>
+    <% end %>
+  <% else %>
+    No evidence yet.
+  <% end %>
+</div>
