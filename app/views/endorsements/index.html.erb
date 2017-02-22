@@ -1,8 +1,16 @@
-<% if @endorsements.any? %>
-  Endorsements you've received:
-  <% @endorsements.each do |endorsement| %>
-   <%= link_to "#{endorsement.headline}", endorsement_path(endorsement) %> 
+<div class="container">
+
+  <h2>Endorsements</h2>
+  <% if @endorsements.any? %>
+  <h4>Endorsements you've received:</h4>
+    <% @endorsements.each do |endorsement, index| %>
+    <div class="panel panel-info">
+      <div class="panel-heading" id="endorsement_header_<%=index%>">
+        <b><%= link_to "#{endorsement.headline}", endorsement_path(endorsement) %></b>
+      </div>
+    </div>
   <% end %>
-<% else %>
+  <% else %>
   You do not have any endorsements yet
-<% end %>
+  <% end %>
+</div>
