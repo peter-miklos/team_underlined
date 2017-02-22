@@ -1,11 +1,42 @@
-<%= form_for @endorsement do |f| %>
-  <%= f.label :headline %>
-  <%= f.text_field :headline %>
-  <%= f.label :name %>
-  <%= f.text_field :name %>
-  <%= f.label :description %>
-  <%= f.text_field :description %>
-  <%= f.label :category %>
-  <%= f.text_field :category %>
-  <%= f.submit "Create endorsement" %>
-<% end %>
+<div class="container">
+  <%= form_for @endorsement do |e| %>
+
+  <div class="form-group row">
+    <label for="headline" class="col-xs-2 col-form-label"><%= e.label :headline %></label>
+    <div class="col-xs-10">
+      <%= e.text_field(:headline, class: "form-control", placeholder: "Add headline here") %>
+    </div>
+  </div>
+
+  <div class="form-group row">
+    <label for="name" class="col-xs-2 col-form-label"><%= e.label :name %></label>
+    <div class="col-xs-10">
+      <%= e.text_field(:name, class: "form-control", placeholder: "Add name here") %>
+    </div>
+  </div>
+
+  <div class="form-group row">
+    <label for="description" class="col-xs-2 col-form-label"><%= e.label :description %></label>
+    <div class="col-xs-10">
+      <%= e.text_field(:description, class: "form-control", placeholder: "Add description here") %>
+    </div>
+  </div>
+
+  <div class="form-group row">
+    <label for="category" class="col-xs-2 col-form-label"><%= e.label :category %></label>
+    <div class="col-xs-10">
+      <%= e.text_field(:category, class: "form-control", placeholder: "Add category here") %>
+    </div>
+  </div>
+
+  <div class="form-group row">
+    <label for="date_achieved" class="col-xs-2 col-form-label"><%= e.label :date_achieved %></label>
+    <div class="col-xs-10">
+      <%= e.date_field(:date_achieved, class: "form-control", placeholder: "Add achievement date here") %>
+    </div>
+  </div>
+
+  <%= e.submit("Create endorsement", class: "btn btn-primary") %>
+  <%= link_to "Cancel", endorsements_path %>
+  <% end %>
+</div>

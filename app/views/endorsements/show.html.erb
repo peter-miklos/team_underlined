@@ -1,9 +1,16 @@
-<%= @endorsement.headline %>
-<p>Name</p>
-<%= @endorsement.name %>
-<p>Description</p>
-<%= @endorsement.description %>
-<p>Category</p>
-<%= @endorsement.category %>
-<p>Date endorsement achieved</p>
-<%= @endorsement.date_achieved %>
+<div class="container">
+  <h2>Endorsements</h2>
+
+  <div class="panel panel-info">
+    <div class="panel-heading" id="evidence_header">
+      <b><%= @endorsement.headline%></b>
+    </div>
+    <div class="panel-body" id="evidence_content">
+      <p>Name: <%= @endorsement.name %></p>
+      <p>Category: <%= @endorsement.category %></p>
+      <p>Description: <%= @endorsement.description %><p>
+      <p>Date achieved: <%= @endorsement.date_achieved %></p>
+
+      </div>
+    </div>
+</div>
