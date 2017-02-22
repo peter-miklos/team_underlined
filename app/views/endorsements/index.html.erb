@@ -1,0 +1,9 @@
+<% if @endorsements.any? %>
+  Endorsements you've received:
+  <%= @endorsements.each do |endorsement| %>
+    <%= endorsement.headline %>
+  <% end %>
+<% else %>
+  You do not have any endorsements yet
+<% end %>
+<h2><%= link_to "Create endorsement", new_endorsement_path %></h2>
