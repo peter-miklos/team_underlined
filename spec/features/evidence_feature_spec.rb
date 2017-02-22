@@ -21,5 +21,6 @@ describe "creating evidence" do
     click_button "Create Evidence"
     expect(page).to have_content "Attended career fair"
     expect(page).to have_content "Sponsorship, Role Model"
+    expect(page).to have_content "Attended UCL care..."
   end
 end
